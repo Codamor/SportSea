@@ -1,3 +1,14 @@
+@import "./src/styles/variables";
+
 .navigation{
   width: 100%;
+  &__list{
+    display: flex;
+    justify-content: space-around;
+  }
+  &__link{
+    font-size: 1.4em;
+    font-weight: 500;
+    color: $tertiary-color;
+  }
 }

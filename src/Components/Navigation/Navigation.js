@@ -11,12 +11,18 @@ class Navigation extends React.Component{
                         <a className="navigation__link">
                             Accueil
                         </a>
+                    </li>
+                    <li className="navigation__item">
                         <a className="navigation__link">
                             Profil
                         </a>
+                    </li>
+                    <li className="navigation__item">
                         <a className="navigation__link">
                             Réglage
                         </a>
+                    </li>
+                    <li className="navigation__item">
                         <a className="navigation__link">
                             Communauté
                         </a>
