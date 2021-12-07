@@ -2,7 +2,8 @@ import React from "react";
 import {BrowserRouter} from "react-router-dom";
 import Header from "./Layouts/Header/Header";
 import Container from "./Components/Container/Container";
-import Logo from "./Components/Logo/Logo";
+import Sidebar from "./Components/Sidebar/Sidebar";
+import Main from "./Layouts/Main/Main";
 
 
 class App extends React.Component{
@@ -11,8 +12,9 @@ class App extends React.Component{
         return(
             <BrowserRouter>
                 <Header />
-                <Container>
-
+                <Container className="container--vertical">
+                    <Sidebar />
+                    <Main />
                 </Container>
             </BrowserRouter>
 
