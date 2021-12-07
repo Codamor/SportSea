@@ -12,7 +12,7 @@ class App extends React.Component{
         return(
             <BrowserRouter>
                 <Header />
-                <Container className="container--vertical">
+                <Container className="container--horizontal">
                     <Sidebar />
                     <Main />
                 </Container>
