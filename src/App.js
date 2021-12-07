@@ -1,6 +1,6 @@
 import React from "react";
 import {BrowserRouter} from "react-router-dom";
-import Header from "./Layouts/Header";
+import Header from "./Layouts/Header/Header";
 
 
 class App extends React.Component{
