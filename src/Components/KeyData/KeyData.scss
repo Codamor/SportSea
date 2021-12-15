@@ -1,0 +1,33 @@
+@import "src/styles/variables";
+
+.keyData{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 258px;
+  height: 124px;
+  border-radius: 5px;
+  background-color: $keydata-bg-color;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.0212249);
+  &__content-box{
+    display: flex;
+    align-items: center;
+  }
+  &__image{
+    width: 60px;
+    height: 60px;
+  }
+  &__content{
+    margin-left: 25px;
+  }
+  &__data{
+    font-size: 1.1em;
+    font-weight: 700;
+  }
+  &__label{
+    margin-top: 5px;
+    font-size: 0.8em;
+    font-weight: 500;
+    color: $keyData-color;
+  }
+}
