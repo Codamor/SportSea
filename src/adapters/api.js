@@ -35,3 +35,33 @@ async function getUserActivity(userId){
     return userActivity.data ;
 }
 
+
+async function getUserAverageSessions(userId){
+    let response = await fetch(
+        `http://localhost:3000/user/${userId}/average-sessions`,
+        {
+            method: "get"
+        }
+    )
+
+    checkError(response) ;
+
+    let userAverageSessions = await response.json() ;
+
+    return userAverageSessions.data ;
+}
+
+async function getUserPerformance(userId){
+    let response = await fetch(
+        `http://localhost:3000/user/${userId}/performance`,
+        {
+            method: "get"
+        }
+    )
+
+    checkError(response) ;
+
+    let userPerformance = await response.json() ;
+
+    return userPerformance.data ;
+}
