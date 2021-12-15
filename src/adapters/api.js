@@ -4,7 +4,7 @@ function checkError(response){
     }
 }
 
-async function getUserInformations(userId){
+export async function getUserInformations(userId){
     let response =
         await fetch(
             `http://localhost:3000/user/${userId}`,
@@ -20,7 +20,7 @@ async function getUserInformations(userId){
 }
 
 
-async function getUserActivity(userId){
+export async function getUserActivity(userId){
     let response =
         await fetch(
             `http://localhost:3000/user/${userId}/activity`,
@@ -36,7 +36,7 @@ async function getUserActivity(userId){
 }
 
 
-async function getUserAverageSessions(userId){
+export async function getUserAverageSessions(userId){
     let response = await fetch(
         `http://localhost:3000/user/${userId}/average-sessions`,
         {
@@ -51,7 +51,7 @@ async function getUserAverageSessions(userId){
     return userAverageSessions.data ;
 }
 
-async function getUserPerformance(userId){
+export async function getUserPerformance(userId){
     let response = await fetch(
         `http://localhost:3000/user/${userId}/performance`,
         {
@@ -65,3 +65,4 @@ async function getUserPerformance(userId){
 
     return userPerformance.data ;
 }
+
