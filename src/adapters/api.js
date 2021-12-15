@@ -9,13 +9,29 @@ async function getUserInformations(userId){
         await fetch(
             `http://localhost:3000/user/${userId}`,
             {
-                method: "get",
+                method: "get"
                 }) ;
 
     checkError(response) ;
 
-    let data = await response.json() ;
+    let userInformations = await response.json() ;
 
-    return data.data ;
+    return userInformations.data ;
+}
+
+
+async function getUserActivity(userId){
+    let response =
+        await fetch(
+            `http://localhost:3000/user/${userId}/activity`,
+            {
+                method: "get"
+            }) ;
+
+    checkError(response) ;
+
+    let userActivity = await response.json() ;
+
+    return userActivity.data ;
 }
 
