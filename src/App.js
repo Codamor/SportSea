@@ -4,11 +4,13 @@ import Header from "./Layouts/Header/Header";
 import Container from "./Components/Container/Container";
 import Sidebar from "./Components/Sidebar/Sidebar";
 import Main from "./Layouts/Main/Main";
+import {getUserInformations} from "./adapters/api";
 
 
 class App extends React.Component{
 
     render(){
+
         return(
             <BrowserRouter>
                 <Header />
@@ -20,6 +22,7 @@ class App extends React.Component{
 
         )
     }
+
 }
 
 export default App ;
