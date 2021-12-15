@@ -1,5 +1,5 @@
 import React from "react";
-import "./Keydata.scss" ;
+import "./KeyData.scss" ;
 
 class KeyData extends React.Component{
     constructor(props){
