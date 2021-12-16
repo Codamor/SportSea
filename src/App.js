@@ -1,5 +1,7 @@
 import React from "react";
 import {BrowserRouter} from "react-router-dom";
+import PropTypes from "prop-types";
+
 import Header from "./Layouts/Header/Header";
 import Container from "./Components/Container/Container";
 import Sidebar from "./Layouts/Sidebar/Sidebar";
@@ -26,10 +28,6 @@ class App extends React.Component{
 
         )
     }
-
-    componentDidMount() {
-    }
-
 }
 
 export default App ;

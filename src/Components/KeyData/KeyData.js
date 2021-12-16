@@ -1,4 +1,6 @@
 import React from "react";
+import PropTypes from "prop-types";
+
 import "./KeyData.scss" ;
 
 class KeyData extends React.Component{
@@ -35,6 +37,12 @@ class KeyData extends React.Component{
             </div>
         )
     }
+}
+
+KeyData.propTypes = {
+    logo: PropTypes.string.isRequired,
+    data: PropTypes.string.isRequired,
+    label: PropTypes.string.isRequired
 }
 
 
