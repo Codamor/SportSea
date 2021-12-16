@@ -18,9 +18,6 @@ class App extends React.Component{
                 <Container className="container--horizontal">
                     <Sidebar />
                     <Main>
-                        <Container>
-                            <KeyData />
-                        </Container>
 
                     </Main>
                 </Container>
@@ -28,6 +25,10 @@ class App extends React.Component{
 
         )
     }
+}
+
+BrowserRouter.propTypes = {
+    children: PropTypes.node.isRequired
 }
 
 export default App ;
