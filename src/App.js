@@ -6,7 +6,8 @@ import Header from "./Layouts/Header/Header";
 import Container from "./Components/Container/Container";
 import Sidebar from "./Layouts/Sidebar/Sidebar";
 import Main from "./Layouts/Main/Main";
-import KeyData from "./Components/KeyData/KeyData";
+import Logo from "./Components/Logo/Logo";
+import Navigation from "./Components/Navigation/Navigation";
 
 class App extends React.Component{
 
@@ -14,7 +15,12 @@ class App extends React.Component{
 
         return(
             <BrowserRouter>
-                <Header />
+
+                <Header>
+                    <Logo />
+                    <Navigation />
+                </Header>
+
                 <Container className="container--horizontal">
                     <Sidebar />
                     <Main>
