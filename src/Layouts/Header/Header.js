@@ -1,4 +1,6 @@
 import React from "react";
+import PropTypes from "prop-types";
+
 import Logo from "../../Components/Logo/Logo";
 import Navigation from "../../Components/Navigation/Navigation";
 
@@ -13,6 +15,10 @@ class Header extends React.Component{
             </header>
         )
     }
+}
+
+Header.propTypes = {
+    children: PropTypes.node.isRequired
 }
 
 
