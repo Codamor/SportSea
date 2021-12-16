@@ -1,17 +1,15 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-import Logo from "../../Components/Logo/Logo";
-import Navigation from "../../Components/Navigation/Navigation";
-
 import "./Header.scss"
 
 class Header extends React.Component{
     render() {
         return(
             <header className="header">
-                <Logo />
-                <Navigation />
+                {
+                    this.props.children
+                }
             </header>
         )
     }
@@ -20,6 +18,5 @@ class Header extends React.Component{
 Header.propTypes = {
     children: PropTypes.node.isRequired
 }
-
 
 export default Header ;
