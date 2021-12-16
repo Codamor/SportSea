@@ -16,7 +16,10 @@ class App extends React.Component{
                 <Container className="container--horizontal">
                     <Sidebar />
                     <Main>
-                        <KeyData />
+                        <Container>
+                            <KeyData />
+                        </Container>
+
                     </Main>
                 </Container>
             </BrowserRouter>

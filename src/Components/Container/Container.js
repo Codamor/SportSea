@@ -1,4 +1,6 @@
 import React from "react";
+import PropTypes from 'prop-types';
+
 import "./Container.scss";
 
 class Container extends React.Component{
@@ -17,5 +19,10 @@ class Container extends React.Component{
         )
     }
 }
+
+Container.propTypes = {
+    children: PropTypes.node
+}
+
 
 export default Container ;
