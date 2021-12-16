@@ -1,4 +1,6 @@
 import React from "react";
+import PropTypes from "prop-types";
+
 import "./Main.scss" ;
 
 class Main extends React.Component{
@@ -16,5 +18,11 @@ class Main extends React.Component{
         );
     }
 }
+
+
+Main.propTypes = {
+    children: PropTypes.node.isRequired
+}
+
 
 export default Main ;
