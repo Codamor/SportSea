@@ -1,15 +1,15 @@
 import React from "react";
-import {BrowserRouter, Route, Routes} from "react-router-dom";
+import {BrowserRouter, Route, Switch} from "react-router-dom";
 import PropTypes from "prop-types";
 
 
-import Header from "./Layouts/Header/Header";
+import Header from "./Components/Header/Header";
 import Logo from "./Components/Logo/Logo";
 import Navigation from "./Components/Navigation/Navigation";
 import Container from "./Components/Container/Container";
-import Sidebar from "./Layouts/Sidebar/Sidebar";
-import Main from "./Layouts/Main/Main";
-import MainUser from "./Layouts/Main/MainUser";
+import Sidebar from "./Components/Sidebar/Sidebar";
+import HomePage from "./Layouts/HomePage";
+import UserPage from "./Layouts/UserPage";
 
 class App extends React.Component{
 
@@ -25,10 +25,10 @@ class App extends React.Component{
 
                 <Container className="container--horizontal">
                     <Sidebar />
-                    <Routes>
-                        <Route exact path="/" element={Main} />
-                        <Route path="/user/:id" element={MainUser} />
-                    </Routes>
+                    <Switch>
+                        <Route exact path="/" component={HomePage} />
+                        <Route path="/user/:id" component={UserPage} />
+                    </Switch>
                 </Container>
             </BrowserRouter>
 
