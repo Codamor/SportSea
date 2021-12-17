@@ -1,11 +1,13 @@
 import React from "react";
 
-class HomePage extends React.Component{
+class UserPage extends React.Component{
     constructor(props) {
         super(props);
+        this.userId = this.props.match.params.id;
     }
 
     render() {
+
 
         return (
             <main>
@@ -16,4 +18,4 @@ class HomePage extends React.Component{
 
 }
 
-export default HomePage ;
+export default UserPage ;

@@ -8,8 +8,8 @@ import Logo from "./Components/Logo/Logo";
 import Navigation from "./Components/Navigation/Navigation";
 import Container from "./Components/Container/Container";
 import Sidebar from "./Components/Sidebar/Sidebar";
-import HomePage from "./Layouts/HomePage";
-import UserPage from "./Layouts/UserPage";
+import HomePage from "./Layouts/HomePage/HomePage";
+import UserPage from "./Layouts/UserPage/UserPage";
 
 class App extends React.Component{
 
