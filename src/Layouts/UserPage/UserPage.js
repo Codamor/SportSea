@@ -2,7 +2,7 @@ import React from "react";
 import Container from "../../Components/Container/Container";
 import Main from "../../Components/Main/Main";
 import Informations from "../../Components/Informations/Informations";
-import {getUserActivity, getUserAverageSessions, getUserInformations} from "../../adapters/api";
+import {getUserActivity, getUserAverageSessions, getUserInformations, getUserPerformance} from "../../adapters/api";
 
 class UserPage extends React.Component{
     constructor(props) {
@@ -11,7 +11,10 @@ class UserPage extends React.Component{
         this.state = {
             userName: "",
             userSessions: [],
-            averageSessions: []
+            averageSessions: [],
+            userPerformance: [],
+            todayScore: 0,
+            keyData: []
         }
     }
 
@@ -22,6 +25,7 @@ class UserPage extends React.Component{
             <Main>
 
                 <Container className="container--vertical">
+
 
                 </Container>
 
@@ -35,7 +39,9 @@ class UserPage extends React.Component{
             .then(data => {
                 this.setState(
                     {
-                        userName: data.userInfos.firstName
+                        userName: data.userInfos.firstName,
+                        userScore: data.todayScore,
+                        keyData: data.keyData
                     }
                 )
             })
@@ -57,6 +63,14 @@ class UserPage extends React.Component{
                     }
                 )
             })
+
+        getUserPerformance(this.userId).then(data =>{
+            this.setState(
+                {
+                    userPerformance: data
+                }
+            )
+        })
     }
 
 }
