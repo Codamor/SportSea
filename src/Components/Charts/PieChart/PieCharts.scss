@@ -1,0 +1,23 @@
+.pieChart {
+  min-width: 200px;
+  max-width: 260px;
+  width: 19vw;
+  min-height: 200px;
+  max-height: 260px;
+  height: 19vw;
+  background-color: #fbfbfb;
+  border-radius: 5px;
+  font-size: 15px;
+  &__value {
+    font-size: 2em;
+    font-weight: 500;
+    fill: #282d30;
+    text-anchor: middle;
+  }
+  &__text {
+    font-size: 1em;
+    font-weight: 400;
+    fill: #282d30;
+    text-anchor: middle;
+  }
+}

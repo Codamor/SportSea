@@ -1,9 +1,13 @@
 import React from "react";
+import PropTypes from "prop-types";
+import {getUserActivity, getUserAverageSessions, getUserInformations, getUserPerformance} from "../../adapters/api";
+
 import Container from "../../Components/Container/Container";
 import Main from "../../Components/Main/Main";
 import Informations from "../../Components/Informations/Informations";
-import {getUserActivity, getUserAverageSessions, getUserInformations, getUserPerformance} from "../../adapters/api";
-import PropTypes from "prop-types";
+import BarCharts from "../../Components/Charts/BarChart/BarCharts";
+import RadialChart from "../../Components/Charts/RadialChart/RadialChart";
+
 
 class UserPage extends React.Component{
     constructor(props) {
@@ -21,13 +25,14 @@ class UserPage extends React.Component{
 
     render() {
 
-
         return (
             <Main>
 
                 <Container className="container--vertical">
+                    
+                    <RadialChart todayScore={this.state.todayScore}/>
 
-                    <Informations userName={this.state.userName} />
+
 
                 </Container>
 
@@ -42,7 +47,7 @@ class UserPage extends React.Component{
                 this.setState(
                     {
                         userName: data.userInfos.firstName,
-                        userScore: data.todayScore,
+                        todayScore: data.todayScore,
                         keyData: data.keyData
                     }
                 )
