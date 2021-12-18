@@ -3,6 +3,7 @@ import Container from "../../Components/Container/Container";
 import Main from "../../Components/Main/Main";
 import Informations from "../../Components/Informations/Informations";
 import {getUserActivity, getUserAverageSessions, getUserInformations, getUserPerformance} from "../../adapters/api";
+import PropTypes from "prop-types";
 
 class UserPage extends React.Component{
     constructor(props) {
@@ -26,6 +27,7 @@ class UserPage extends React.Component{
 
                 <Container className="container--vertical">
 
+                    <Informations userName={this.state.userName} />
 
                 </Container>
 
@@ -73,6 +75,10 @@ class UserPage extends React.Component{
         })
     }
 
+}
+
+Main.propTypes = {
+    children: PropTypes.node.isRequired
 }
 
 export default UserPage ;
