@@ -1,0 +1,13 @@
+.informations{
+  &__title{
+    margin-bottom: 15px;
+    font-weight: 500;
+    &--red{
+      color: red;
+    }
+  }
+  &__subTitle{
+    font-size: 0.9em;
+    font-weight: 400;
+  }
+}
