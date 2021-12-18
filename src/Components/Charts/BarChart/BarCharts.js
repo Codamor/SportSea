@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import {BarChart, CartesianGrid, XAxis,YAxis, Tooltip, Legend, Bar} from "recharts";
+import {BarChart, CartesianGrid, XAxis, YAxis, Tooltip, Legend, Bar, ResponsiveContainer, Text} from "recharts";
 import "./BarCharts.scss"
 
 class BarCharts extends React.Component{
@@ -11,15 +11,18 @@ class BarCharts extends React.Component{
     render() {
 
             return (
-                <BarChart width={730} height={250} data={this.props.sessions}>
-                    <CartesianGrid strokeDasharray="3 3" />
-                    <XAxis dataKey="name" />
-                    <YAxis />
-                    <Tooltip />
-                    <Legend />
-                    <Bar dataKey="kilogram" fill="#8884d8" />
-                    <Bar dataKey="calories" fill="#82ca9d" />
-                </BarChart>
+                <ResponsiveContainer width="100%" height="100%">
+                    <BarChart  data={this.props.sessions} barGap={50} barGap={8} barSize={7}>
+                        <CartesianGrid vertical={false} strokeDasharray="4" />
+                        <XAxis dataKey={"day"} tickLine={false}/>
+                        <YAxis hide={true}/>
+                        <Tooltip />
+                        <Legend verticalAlign="top" align="right" iconType="circle" iconSize={10} />
+                        <Bar dataKey="kilogram" fill="black"   radius={[10, 10, 0, 0]}/>
+                        <Bar dataKey="calories" fill="red" radius={[10, 10, 0, 0]}/>
+                    </BarChart>
+                </ResponsiveContainer>
+
             );
         }
 
