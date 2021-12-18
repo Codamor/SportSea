@@ -2,7 +2,7 @@ import React from "react";
 import Container from "../../Components/Container/Container";
 import Main from "../../Components/Main/Main";
 import Informations from "../../Components/Informations/Informations";
-import {getUserActivity, getUserInformations} from "../../adapters/api";
+import {getUserActivity, getUserAverageSessions, getUserInformations} from "../../adapters/api";
 
 class UserPage extends React.Component{
     constructor(props) {
@@ -10,7 +10,8 @@ class UserPage extends React.Component{
         this.userId = this.props.match.params.id;
         this.state = {
             userName: "",
-            userSessions: []
+            userSessions: [],
+            averageSessions: []
         }
     }
 
@@ -44,6 +45,15 @@ class UserPage extends React.Component{
                 this.setState(
                     {
                         userSessions: data.sessions
+                    }
+                )
+            })
+
+        getUserAverageSessions(this.userId)
+            .then(data => {
+                this.setState(
+                    {
+                        averageSessions: data.sessions
                     }
                 )
             })
