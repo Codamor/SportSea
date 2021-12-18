@@ -21,7 +21,7 @@ class Container extends React.Component{
 }
 
 Container.propTypes = {
-    children: PropTypes.node
+    children: PropTypes.node.isRequired
 }
 
 
