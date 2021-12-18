@@ -9,7 +9,8 @@ class UserPage extends React.Component{
         super(props);
         this.userId = this.props.match.params.id;
         this.state = {
-            userName: ""
+            userName: "",
+            userSessions: []
         }
     }
 
@@ -38,7 +39,14 @@ class UserPage extends React.Component{
                 )
             })
 
-
+        getUserActivity(this.userId)
+            .then(data => {
+                this.setState(
+                    {
+                        userSessions: data.sessions
+                    }
+                )
+            })
     }
 
 }
