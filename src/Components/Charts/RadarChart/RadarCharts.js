@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { Radar, RadarChart, PolarGrid, PolarAngleAxis, PolarRadiusAxis, ResponsiveContainer } from 'recharts';
+import { Radar, RadarChart, PolarGrid, PolarAngleAxis, ResponsiveContainer } from 'recharts';
 
 import "./RadarCharts.scss";
 
@@ -32,6 +32,17 @@ class RadarCharts extends React.Component{
 
     }
 
+}
+
+RadarCharts.propTypes = {
+    userPerformance: PropTypes.arrayOf(
+        PropTypes.shape(
+            {
+                kind: PropTypes.string.isRequired,
+                value: PropTypes.number.isRequired
+            }
+        )
+    )
 }
 
 export default RadarCharts ;
