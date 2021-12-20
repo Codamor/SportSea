@@ -85,8 +85,19 @@ export async function getUserPerformance(userId){
 
     checkError(response) ;
 
-    let userPerformance = await response.json() ;
+    let rawData = await response.json() ;
 
-    return userPerformance.data ;
+    let userPerformance = [] ;
+
+    for (let i = 0; i < rawData.data.data.length; i++) {
+        userPerformance.push(
+            {
+                kind: rawData.data.kind[i + 1],
+                value: rawData.data.data[i].value
+            }
+        )
+    }
+
+    return userPerformance ;
 }
 
