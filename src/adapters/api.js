@@ -45,9 +45,7 @@ export async function getUserActivity(userId){
         )
         startDay += 1 ;
     }
-
     return userActivity ;
-
 }
 
 
@@ -61,9 +59,20 @@ export async function getUserAverageSessions(userId){
 
     checkError(response) ;
 
-    let userAverageSessions = await response.json() ;
+    let data = await response.json() ;
 
-    return userAverageSessions.data ;
+    let userAverageSessions = [] ;
+    let days = ["L", "M", "M", "J", "V", "S", "D"] ;
+
+    for (let i = 0; i < data.data.sessions.length; i++) {
+        userAverageSessions.push(
+            {
+                day: days[i],
+                sessionLength: data.data.sessions[i].sessionLength
+            }
+        )
+    }
+    return userAverageSessions ;
 }
 
 export async function getUserPerformance(userId){
