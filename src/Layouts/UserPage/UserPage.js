@@ -5,6 +5,7 @@ import {getUserActivity, getUserAverageSessions, getUserInformations, getUserPer
 import Container from "../../Components/Container/Container";
 import Main from "../../Components/Main/Main";
 import PieCharts from "../../Components/Charts/PieChart/PieCharts";
+import LineCharts from "../../Components/Charts/LineChart/LineCharts";
 
 
 class UserPage extends React.Component{
@@ -28,7 +29,7 @@ class UserPage extends React.Component{
 
                 <Container className="container--vertical">
                     
-
+                    <LineCharts averageSessions={this.state.averageSessions} />
 
                 </Container>
 
@@ -60,12 +61,26 @@ class UserPage extends React.Component{
 
         getUserAverageSessions(this.userId)
             .then(data => {
+
+                let formatedData = [] ;
+                let days = ["L", "M", "M", "J", "V", "S", "D"] ;
+
+                for (let i = 0; i < data.sessions.length; i++) {
+                    formatedData.push(
+                        {
+                            day: days[i],
+                            sessionLength: data.sessions[i].sessionLength
+                        }
+                    )
+                }
+
                 this.setState(
                     {
-                        averageSessions: data.sessions
+                        averageSessions: formatedData
                     }
                 )
             })
+
 
         getUserPerformance(this.userId).then(data =>{
             this.setState(
