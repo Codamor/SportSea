@@ -30,9 +30,24 @@ export async function getUserActivity(userId){
 
     checkError(response) ;
 
-    let userActivity = await response.json() ;
+    let data = await response.json() ;
 
-    return userActivity.data ;
+    let userActivity = [] ;
+    let startDay = 0 ;
+
+    for (let i = 0; i < data.data.sessions.length; i++) {
+        userActivity.push(
+            {
+                day: startDay + 1,
+                kilogram: data.data.sessions[i].kilogram,
+                calories: data.data.sessions[i].calories
+            }
+        )
+        startDay += 1 ;
+    }
+
+    return userActivity ;
+
 }
 
 
