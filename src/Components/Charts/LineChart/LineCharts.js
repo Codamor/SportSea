@@ -6,7 +6,7 @@ import {
     Line,
     XAxis,
     Tooltip,
-    ResponsiveContainer
+    ResponsiveContainer, Text
 } from 'recharts';
 
 
@@ -73,6 +73,22 @@ class LineCharts extends React.Component{
                             strokeWidth={4}
                             activeDot={{ stroke: 'white', strokeWidth: 5, r: 3 }}
                         />
+
+                        <text
+                            className="lineChart__text"
+                            x="5%"
+                            y="15%"
+                        >
+                            Durée moyenne des
+                        </text>
+
+                        <text
+                            className="lineChart__text"
+                            x="5%"
+                            y="20%"
+                        >
+                            sessions
+                        </text>
 
                     </LineChart>
                 </ResponsiveContainer>
