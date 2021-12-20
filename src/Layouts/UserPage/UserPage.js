@@ -4,9 +4,7 @@ import {getUserActivity, getUserAverageSessions, getUserInformations, getUserPer
 
 import Container from "../../Components/Container/Container";
 import Main from "../../Components/Main/Main";
-import Informations from "../../Components/Informations/Informations";
-import BarCharts from "../../Components/Charts/BarChart/BarCharts";
-import RadialChart from "../../Components/Charts/RadialChart/RadialChart";
+import PieCharts from "../../Components/Charts/PieChart/PieCharts";
 
 
 class UserPage extends React.Component{
@@ -30,8 +28,6 @@ class UserPage extends React.Component{
 
                 <Container className="container--vertical">
                     
-                    <RadialChart todayScore={this.state.todayScore}/>
-
 
 
                 </Container>
