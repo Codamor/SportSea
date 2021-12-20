@@ -50,17 +50,30 @@ class LineCharts extends React.Component{
 
                         <XAxis
                             dataKey="day"
-                            className="lineChart__legend"
                             stroke="white" dataKey="day"
                             axisLine={false}
                             tickLine={false}
                         />
+
                         <Tooltip content={<CustomTooltip />}/>
+
+                        <defs>
+                            <linearGradient id="linear" x1="0%" y1="0%" x2="100%" y2="0%">
+                                <stop offset="70%"  stopColor="rgba(255,255,255,0.5)"/>
+                                <stop offset="100%" stopColor="#fff"/>
+                            </linearGradient>
+                        </defs>
+
+
                         <Line
+                            dot={false}
                             type="natural"
                             dataKey="sessionLength"
-                            stroke="#8884d8"
-                            activeDot={{ r: 8 }} />
+                            stroke="url(#linear)"
+                            strokeWidth={4}
+                            activeDot={{ stroke: 'white', strokeWidth: 5, r: 3 }}
+                        />
+
                     </LineChart>
                 </ResponsiveContainer>
             </div>
