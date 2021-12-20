@@ -6,7 +6,7 @@ import {
     Line,
     XAxis,
     Tooltip,
-    ResponsiveContainer, Text
+    ResponsiveContainer
 } from 'recharts';
 
 
@@ -14,10 +14,6 @@ import "./LineCharts.scss";
 
 
 class LineCharts extends React.Component{
-    constructor(props) {
-        super(props);
-
-    }
 
     render() {
 
@@ -50,7 +46,7 @@ class LineCharts extends React.Component{
 
                         <XAxis
                             dataKey="day"
-                            stroke="white" dataKey="day"
+                            stroke="white"
                             axisLine={false}
                             tickLine={false}
                         />
@@ -96,6 +92,17 @@ class LineCharts extends React.Component{
 
         );
     }
+}
+
+LineCharts.propTypes = {
+    averageSessions: PropTypes.arrayOf(
+        PropTypes.shape(
+            {
+                day: PropTypes.string.isRequired,
+                sessionLength: PropTypes.number.isRequired
+            }
+        )
+    )
 }
 
 

@@ -5,9 +5,6 @@ import {ResponsiveContainer, PieChart, Pie, Cell} from "recharts";
 import "./PieCharts.scss";
 
 class PieCharts extends React.Component{
-    constructor(props) {
-        super(props);
-    }
 
     render() {
 
@@ -86,7 +83,10 @@ class PieCharts extends React.Component{
             </div>
         );
     }
+}
 
+PieCharts.propTypes = {
+    todayScore: PropTypes.number.isRequired
 }
 
 

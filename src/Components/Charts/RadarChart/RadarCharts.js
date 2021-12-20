@@ -1,35 +1,14 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { Radar, RadarChart, PolarGrid, PolarAngleAxis, PolarRadiusAxis, ResponsiveContainer } from 'recharts';
+import { Radar, RadarChart, PolarGrid, PolarAngleAxis, ResponsiveContainer } from 'recharts';
 
 import "./RadarCharts.scss";
 
 class RadarCharts extends React.Component{
-    constructor(props) {
-        super(props);
-    }
-
-    formatRawData(rawData){
-        let userPerformanceFormatedData = [] ;
-
-        for (let i = 0; i < rawData.data.length; i++) {
-            userPerformanceFormatedData.push(
-                {
-                    kind: rawData.kind[i+1],
-                    value:rawData.data[i].value
-                }
-            )
-        }
-        return userPerformanceFormatedData ;
-    }
-
-
-
 
     render() {
 
-        if(this.props.userPerformance.length !== 0){
-            let data = this.formatRawData(this.props.userPerformance)
+        let data = this.props.userPerformance ;
 
             return (
 
@@ -51,17 +30,19 @@ class RadarCharts extends React.Component{
                 </ResponsiveContainer>
             );
 
-        } else {
-            return (
-                <div>
-
-                </div>
-            )
-        }
-
-
     }
 
+}
+
+RadarCharts.propTypes = {
+    userPerformance: PropTypes.arrayOf(
+        PropTypes.shape(
+            {
+                kind: PropTypes.string.isRequired,
+                value: PropTypes.number.isRequired
+            }
+        )
+    )
 }
 
 export default RadarCharts ;
