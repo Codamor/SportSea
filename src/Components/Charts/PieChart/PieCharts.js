@@ -4,6 +4,14 @@ import {ResponsiveContainer, PieChart, Pie, Cell} from "recharts";
 
 import "./PieCharts.scss";
 
+/**
+ * Component for showing user day score
+ * Day score is displayed in a pie chart
+ *
+ * @component
+ * @example
+ * <PieCharts todayScore={this.props.todayScore} />
+ */
 class PieCharts extends React.Component{
 
     render() {
@@ -86,6 +94,9 @@ class PieCharts extends React.Component{
 }
 
 PieCharts.propTypes = {
+    /**
+     * user day score
+     */
     todayScore: PropTypes.number.isRequired
 }
 

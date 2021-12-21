@@ -1,6 +1,13 @@
 import React from "react";
 import "./HomePage.scss"
 
+/**
+ * Component for showing the home page main content
+ *
+ * @component
+ * @example
+ * <HomePage />
+ */
 class HomePage extends React.Component{
 
     render() {

@@ -6,6 +6,13 @@ import swimmingLogo from "../../assets/img/swimming.png";
 import bikingLogo from "../../assets/img/biking.png";
 import weightsLogo from "../../assets/img/weights.png";
 
+/**
+ * Component for showing the sidebar
+ *
+ * @component
+ * @example
+ * <SideBar />
+ */
 class Sidebar extends React.Component{
     render() {
         return (

@@ -4,6 +4,13 @@ import {Link} from "react-router-dom";
 import logo from "../../assets/img/logo.png";
 import "./Logo.scss" ;
 
+/**
+ * Component for showing the logo
+ *
+ * @component
+ * @example
+ * <Logo />
+ */
 class Logo extends React.Component{
     render() {
         return (

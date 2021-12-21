@@ -1,9 +1,22 @@
+/**
+ * Here are all api calls to get all kind of user informations
+ */
+
+
+/**
+ * Check api response code
+ * @param response - the response from api call
+ */
 function checkError(response){
     if (!response.ok){
         throw new Error(`An error has occurred : ${response.status}`) ;
     }
 }
 
+/**
+ * @param userId
+ * @returns {Promise<*>} - user informations
+ */
 export async function getUserInformations(userId){
     let response =
         await fetch(
@@ -19,7 +32,11 @@ export async function getUserInformations(userId){
     return userInformations.data ;
 }
 
-
+/**
+ *
+ * @param userId
+ * @returns {Promise<*[]>} - user activity
+ */
 export async function getUserActivity(userId){
     let response =
         await fetch(
@@ -48,7 +65,11 @@ export async function getUserActivity(userId){
     return userActivity ;
 }
 
-
+/**
+ *
+ * @param userId
+ * @returns {Promise<*[]>} - user average sessions
+ */
 export async function getUserAverageSessions(userId){
     let response = await fetch(
         `http://localhost:3000/user/${userId}/average-sessions`,
@@ -75,6 +96,11 @@ export async function getUserAverageSessions(userId){
     return userAverageSessions ;
 }
 
+/**
+ *
+ * @param userId
+ * @returns {Promise<*[]>} - user performance
+ */
 export async function getUserPerformance(userId){
     let response = await fetch(
         `http://localhost:3000/user/${userId}/performance`,

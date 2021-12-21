@@ -6,11 +6,20 @@ import Container from "../../Components/Container/Container";
 import Main from "../../Components/Main/Main";
 import PieCharts from "../../Components/Charts/PieChart/PieCharts";
 import LineCharts from "../../Components/Charts/LineChart/LineCharts";
-import {Bar} from "recharts";
+import {Bar, Line, Radar} from "recharts";
 import BarCharts from "../../Components/Charts/BarChart/BarCharts";
+import RadarCharts from "../../Components/Charts/RadarChart/RadarCharts";
+import KeyData from "../../Components/KeyData/KeyData";
 
 
-class UserPage extends React.Component{
+/**
+ * Component for showing the user page main content
+ *
+ * @component
+ * @example
+ <UserPage />
+ */
+class UserPage extends React.Component {
     constructor(props) {
         super(props);
         this.userId = this.props.match.params.id;
@@ -30,6 +39,9 @@ class UserPage extends React.Component{
             <Main>
 
                 <Container className="container--vertical">
+
+
+                    <PieCharts todayScore={this.state.todayScore}/>
 
 
                 </Container>
@@ -70,7 +82,7 @@ class UserPage extends React.Component{
             })
 
 
-        getUserPerformance(this.userId).then(data =>{
+        getUserPerformance(this.userId).then(data => {
             this.setState(
                 {
                     userPerformance: data
@@ -78,11 +90,6 @@ class UserPage extends React.Component{
             )
         })
     }
-
-}
-
-Main.propTypes = {
-    children: PropTypes.node.isRequired
 }
 
 export default UserPage ;

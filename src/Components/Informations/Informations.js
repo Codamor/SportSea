@@ -3,6 +3,13 @@ import PropTypes from "prop-types";
 
 import "./Informations.scss"
 
+/**
+ * Component for showing user informations
+ *
+ * @component
+ * @example
+ * <Informations userName={this.props.userName} />
+ */
 class Informations extends React.Component{
     constructor(props) {
         super(props);
@@ -24,6 +31,9 @@ class Informations extends React.Component{
 }
 
 Informations.propTypes = {
+    /**
+     * user name
+     */
     userName: PropTypes.string.isRequired
 }
 
