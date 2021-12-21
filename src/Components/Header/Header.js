@@ -3,6 +3,16 @@ import PropTypes from "prop-types";
 
 import "./Header.scss"
 
+/**
+ * Component for showing the header
+ *
+ * @component
+ * @example
+ * <Header>
+ *     <Logo>
+ *     <Navigation>
+ * </Header>
+ */
 class Header extends React.Component{
     render() {
         return(
@@ -16,6 +26,9 @@ class Header extends React.Component{
 }
 
 Header.propTypes = {
+    /**
+     * component
+     */
     children: PropTypes.node.isRequired
 }
 
