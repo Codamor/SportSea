@@ -1,4 +1,9 @@
 /**
+ * Here are all api calls to get all kind of user informations
+ */
+
+
+/**
  * Check api response code
  * @param response - the response from api call
  */
