@@ -15,6 +15,19 @@ class BarCharts extends React.Component{
 
     render() {
 
+        const CustomTooltip = ({ active, payload }) => {
+            if (active && payload && payload.length) {
+                return (
+                    <div className="barChart__toolTip">
+                        <p className="barChart__toolTip-text">{`${payload[0].value}kg`}</p>
+                        <p className="barChart__toolTip-text">{`${payload[1].value}kCal`}</p>
+                    </div>
+                );
+            }
+
+            return null;
+        };
+
         return (
             <div className="barChart">
                 <ResponsiveContainer width="100%" height="100%">
@@ -32,7 +45,7 @@ class BarCharts extends React.Component{
 
                         <YAxis hide={true}/>
 
-                        <Tooltip />
+                        <Tooltip content={<CustomTooltip/>} />
 
                         <Legend
                             verticalAlign="top"
