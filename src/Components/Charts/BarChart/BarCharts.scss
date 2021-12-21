@@ -1,8 +1,12 @@
 @import "src/styles/variables";
 
 .barChart{
-  width: 70%;
-  min-height: 320px;
+  width: 60vw;
+  height: 30vw;
+  min-width: 630px;
+  min-height: 270px;
+  max-width: 835px;
+  max-height: 320px;
   &__toolTip{
     padding: 10px;
     background-color: $secondary-color;

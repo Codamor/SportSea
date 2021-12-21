@@ -1,21 +1,24 @@
 @import "src/styles/variables";
 
 .lineChart{
-  width: 200px;
-  height: 200px;
+  width: 20vw;
+  height: 20vw;
+  min-width: 200px;
+  min-height: 200px;
+  max-width: 258px;
+  max-height: 263px;
   border-radius: 5px;
   background-color: $secondary-color;
-  @media screen and (min-width: 1280px){
-    width: 258px;
-    height: 263px;
-  }
   &__tooltip {
     background-color: #ffffff;
     color: $secondary-color;
     padding: 10px;
   }
   &__text{
-    font-size: 1.1em;
+    font-size: 0.8em;
+    @media screen and (min-width: 1280px){
+      font-size: 1.1em;
+    }
     opacity: 0.5;
     fill: #fff;
   }

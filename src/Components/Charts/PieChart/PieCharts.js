@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import {ResponsiveContainer, PieChart, Pie, Cell} from "recharts";
 
-import "../Charts.scss" ;
+
 import "./PieCharts.scss";
 
 
@@ -43,7 +43,7 @@ class PieCharts extends React.Component{
 
 
         return (
-            <div className="chart pieChart">
+            <div className="pieChart">
                 <ResponsiveContainer width="100%" height="100%">
                     <PieChart>
                         <Pie

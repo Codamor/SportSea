@@ -1,6 +1,10 @@
 .radarChart{
-  width: 258px;
-  height: 263px;
+  width: 20vw;
+  height: 20vw;
+  min-width: 200px;
+  min-height: 200px;
+  max-width: 258px;
+  max-height: 263px;
   border-radius: 5px;
   font-size: 0.85em;
   font-weight: 700;
