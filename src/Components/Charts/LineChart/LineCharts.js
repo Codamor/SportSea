@@ -18,7 +18,7 @@ import "./LineCharts.scss";
  *
  * @component
  * @exemple
- * <LineCharts averageSessions={this.props.averageSessions} />
+ * <LineCharts averageSessions={this.state.averageSessions} />
  */
 class LineCharts extends React.Component{
 

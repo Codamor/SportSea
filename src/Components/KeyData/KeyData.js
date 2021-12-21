@@ -8,7 +8,7 @@ import "./KeyData.scss" ;
  *
  * @component
  * @example
- * <KeyData logo={this.props.logo} data={this.props.data} label={this.props.label} />
+ * <KeyData logo={this.state.logo} data={this.state.data} label={this.state.label} />
  */
 class KeyData extends React.Component{
     constructor(props){
