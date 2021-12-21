@@ -55,6 +55,7 @@ class LineCharts extends React.Component{
                             stroke="white"
                             axisLine={false}
                             tickLine={false}
+                            tickMargin={20}
                         />
 
                         <Tooltip content={<CustomTooltip />}/>
