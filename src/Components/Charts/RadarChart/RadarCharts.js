@@ -21,7 +21,7 @@ class RadarCharts extends React.Component{
             return (
                 <div className="radarChart">
                     <ResponsiveContainer width="100%" height="100%" className="radarChart">
-                        <RadarChart outerRadius={200} data={data}>
+                        <RadarChart outerRadius={85} data={data}>
                             <PolarGrid
                                 stroke="white" />
                             <PolarAngleAxis
@@ -30,6 +30,7 @@ class RadarCharts extends React.Component{
                                 axisLine= {false}
                                 tickLine={false}
                             />
+
                             <Radar
                                 dataKey="value"
                                 fill="red"

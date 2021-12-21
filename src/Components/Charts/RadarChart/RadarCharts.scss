@@ -2,5 +2,10 @@
   width: 258px;
   height: 263px;
   border-radius: 5px;
+  font-size: 0.85em;
+  font-weight: 700;
   background-color: #020203;
+  & line{
+    display: none;
+  }
 }
