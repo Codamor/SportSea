@@ -3,9 +3,11 @@
   height: 100%;
   &--horizontal{
     display: flex;
+    justify-content: space-around;
   }
   &--vertical{
     display: flex;
     flex-direction: column;
+    justify-content: space-around;
   }
 }

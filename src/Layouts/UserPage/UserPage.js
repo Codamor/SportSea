@@ -12,6 +12,11 @@ import RadarCharts from "../../Components/Charts/RadarChart/RadarCharts";
 import KeyData from "../../Components/KeyData/KeyData";
 import Informations from "../../Components/Informations/Informations";
 
+import calLogo from "../../assets/img/calories-icon.png" ;
+import proLogo from "../../assets/img/protein-icon.png" ;
+import carLogo from "../../assets/img/carbs-icon.png" ;
+import fatLogo from "../../assets/img/fat-icon.png" ;
+
 
 /**
  * Component for showing the user page main content
@@ -36,11 +41,32 @@ class UserPage extends React.Component {
 
     render() {
 
+        console.log(this.state.keyData)
         return (
             <Main>
 
+               <Informations userName={this.state.userName} />
+
+
                 <Container className="container container--horizontal">
 
+                    <Container className="container container--vertical">
+                        <BarCharts sessions={this.state.userSessions} />
+
+                        <Container className="container container--horizontal">
+                            <LineCharts averageSessions={this.state.userSessions} />
+                            <RadarCharts userPerformance={this.state.userPerformance} />
+                            <PieCharts todayScore={this.state.todayScore} />
+                        </Container>
+
+                    </Container>
+
+                    <Container className="container container--vertical">
+                        <KeyData logo={calLogo} data={this.state.keyData.calorieCount + "kCal"} label="Calories" />
+                        <KeyData logo={proLogo} data={this.state.keyData.proteinCount + "g"} label="Proteines" />
+                        <KeyData logo={carLogo} data={this.state.keyData.carbohydrateCount + "g"} label="Glucides" />
+                        <KeyData logo={fatLogo} data={this.state.keyData.lipidCount + "g"} label="Lipides" />
+                    </Container>
 
                 </Container>
 

@@ -19,23 +19,25 @@ class RadarCharts extends React.Component{
         let data = this.props.userPerformance ;
 
             return (
+                <div className="radarChart">
+                    <ResponsiveContainer width="100%" height="100%" className="radarChart">
+                        <RadarChart outerRadius={200} data={data}>
+                            <PolarGrid
+                                stroke="white" />
+                            <PolarAngleAxis
+                                dataKey="kind"
+                                stroke = "white"
+                                axisLine= {false}
+                                tickLine={false}
+                            />
+                            <Radar
+                                dataKey="value"
+                                fill="red"
+                                fillOpacity={0.8} />
+                        </RadarChart>
+                    </ResponsiveContainer>
+                </div>
 
-                <ResponsiveContainer width="100%" height="100%" className="radarChart">
-                    <RadarChart outerRadius={200} data={data}>
-                        <PolarGrid
-                            stroke="white" />
-                        <PolarAngleAxis
-                            dataKey="kind"
-                            stroke = "white"
-                            axisLine= {false}
-                            tickLine={false}
-                        />
-                        <Radar
-                            dataKey="value"
-                            fill="red"
-                            fillOpacity={0.8} />
-                    </RadarChart>
-                </ResponsiveContainer>
             );
 
     }
