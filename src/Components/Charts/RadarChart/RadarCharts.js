@@ -4,6 +4,14 @@ import { Radar, RadarChart, PolarGrid, PolarAngleAxis, ResponsiveContainer } fro
 
 import "./RadarCharts.scss";
 
+/**
+ * Component for showing user Performance
+ * User performance is displayed in a radar chart
+ *
+ * @component
+ * @example
+ * <RadarCharts userPerformance={this.props.userPerformance} />
+ */
 class RadarCharts extends React.Component{
 
     render() {
@@ -35,6 +43,9 @@ class RadarCharts extends React.Component{
 }
 
 RadarCharts.propTypes = {
+    /**
+     * user performance
+     */
     userPerformance: PropTypes.arrayOf(
         PropTypes.shape(
             {
