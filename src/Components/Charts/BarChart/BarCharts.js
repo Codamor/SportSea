@@ -33,8 +33,9 @@ class BarCharts extends React.Component{
                 <ResponsiveContainer width="100%" height="100%">
                     <BarChart
                         data={this.props.sessions}
-                        barGap={50}
-                        barSize={7}>
+                        barCategoryGap={50}
+                        barGap={10}
+                        barSize={7} >
 
                         <CartesianGrid
                             vertical={false}
