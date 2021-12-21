@@ -1,5 +1,6 @@
 import React from "react";
-import "./HomePage.scss"
+
+import Main from "../../Components/Main/Main";
 
 /**
  * Component for showing the home page main content
@@ -13,7 +14,7 @@ class HomePage extends React.Component{
     render() {
 
         return (
-            <main className="homePage">
+            <Main>
                 <h1 className="homePage__title">
                     Accueil - en cours de conception
                 </h1>
@@ -26,7 +27,7 @@ class HomePage extends React.Component{
 
                 <h3>Utilisateur 18</h3>
                 <p>/user/18</p>
-            </main>
+            </Main>
         );
     }
 
