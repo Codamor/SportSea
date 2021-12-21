@@ -9,7 +9,7 @@ import {
     ResponsiveContainer
 } from 'recharts';
 
-
+import "../Charts.scss" ;
 import "./LineCharts.scss";
 
 /**
@@ -37,7 +37,7 @@ class LineCharts extends React.Component{
 
         return (
 
-            <div className="lineChart">
+            <div className="chart lineChart">
                 <ResponsiveContainer width="100%" height="100%">
                     <LineChart
                         width={500}

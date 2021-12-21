@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 import { Radar, RadarChart, PolarGrid, PolarAngleAxis, ResponsiveContainer } from 'recharts';
 
 import "./RadarCharts.scss";
+import "../Charts.scss" ;
 
 /**
  * Component for showing user Performance
@@ -19,7 +20,7 @@ class RadarCharts extends React.Component{
         let data = this.props.userPerformance ;
 
             return (
-                <div className="radarChart">
+                <div className="chart radarChart">
                     <ResponsiveContainer width="100%" height="100%" className="radarChart">
                         <RadarChart outerRadius={85} data={data}>
                             <PolarGrid
