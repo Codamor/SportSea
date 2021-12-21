@@ -2,7 +2,9 @@ import React from "react";
 import PropTypes from "prop-types";
 import {ResponsiveContainer, PieChart, Pie, Cell} from "recharts";
 
+
 import "./PieCharts.scss";
+
 
 /**
  * Component for showing user day score

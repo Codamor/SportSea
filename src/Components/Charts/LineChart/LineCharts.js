@@ -9,7 +9,6 @@ import {
     ResponsiveContainer
 } from 'recharts';
 
-
 import "./LineCharts.scss";
 
 /**
@@ -28,7 +27,7 @@ class LineCharts extends React.Component{
             if (active && payload && payload.length) {
                 return (
                     <div className="lineChart__tooltip">
-                        <p>{`${payload[0].value}min`}</p>
+                        <p>{`${payload[0].value} min`}</p>
                     </div>
                 );
             }

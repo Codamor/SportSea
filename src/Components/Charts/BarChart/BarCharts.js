@@ -28,13 +28,25 @@ class BarCharts extends React.Component{
             return null;
         };
 
+        const legend = (value) => {
+            let text="";
+            if(value === "kilogram"){
+                text= "Poids (kg)";
+            }
+            else{
+                text= "Calories brûlées (kCal)";
+            }
+            return <span className="barChart__legend">{text}</span>;
+        };
+
         return (
             <div className="barChart">
                 <ResponsiveContainer width="100%" height="100%">
                     <BarChart
                         data={this.props.sessions}
-                        barGap={50}
-                        barSize={7}>
+                        barCategoryGap={50}
+                        barGap={10}
+                        barSize={7} >
 
                         <CartesianGrid
                             vertical={false}
@@ -48,11 +60,21 @@ class BarCharts extends React.Component{
                         <Tooltip content={<CustomTooltip/>} />
 
                         <Legend
-                            verticalAlign="top"
-                            align="right"
+                            height={100}
+                            formatter={legend}
+                            iconSize={8}
                             iconType="circle"
-                            iconSize={10}
-                        />
+                            align="right"
+                            verticalAlign="top"/>
+
+                        <text
+                            className="barChart__title"
+                            fontSize="15px"
+                            x={70}
+                            y={20}
+                            textAnchor="middle"
+                            fill="black"
+                        > Activité quotidienne </text>
 
                         <Bar
                             dataKey="kilogram"

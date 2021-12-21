@@ -1,8 +1,17 @@
 @import "src/styles/variables";
 
 .barChart{
-  width: 835px;
-  min-height: 320px;
+  width: 60vw;
+  height: 30vw;
+  min-width: 630px;
+  min-height: 270px;
+  max-width: 835px;
+  max-height: 320px;
+  margin-bottom: 40px;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.0212249);
+  background-color: $bg-color;
   &__toolTip{
     padding: 10px;
     background-color: $secondary-color;
