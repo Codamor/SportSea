@@ -50,12 +50,44 @@ class BarCharts extends React.Component{
 
                         <CartesianGrid
                             vertical={false}
-                            strokeDasharray="4"
+                            strokeDasharray="3 3"
                         />
 
-                        <XAxis dataKey={"day"} tickLine={false}/>
+                        <XAxis
+                            dataKey={"day"}
+                            tickLine={false}
+                        />
 
-                        <YAxis hide={true}/>
+                        <YAxis
+                            hide={true}
+                            tickLine={false}
+                            axisLine={false}
+                            orientation="left"
+                            yAxisId="calories"
+                        />
+
+                        <YAxis
+                            tickLine={false}
+                            axisLine={false}
+                            orientation="right"
+                            yAxisId="kilogram"
+                            domain={ ['dataMin - 1', 'dataMax + 2'] }
+                            allowDecimals={ false }
+                        />
+
+                        <Bar
+                            dataKey="kilogram"
+                            fill="black"
+                            radius={[10, 10, 0, 0]}
+                            yAxisId="kilogram"
+                        />
+
+                        <Bar
+                            dataKey="calories"
+                            fill="red"
+                            radius={[10, 10, 0, 0]}
+                            yAxisId="calories"
+                        />
 
                         <Tooltip content={<CustomTooltip/>} />
 
@@ -75,17 +107,6 @@ class BarCharts extends React.Component{
                             textAnchor="middle"
                             fill="black"
                         > Activité quotidienne </text>
-
-                        <Bar
-                            dataKey="kilogram"
-                            fill="black"
-                            radius={[10, 10, 0, 0]}
-                        />
-
-                        <Bar dataKey="calories"
-                             fill="red"
-                             radius={[10, 10, 0, 0]}
-                        />
 
                     </BarChart>
                 </ResponsiveContainer>
