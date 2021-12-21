@@ -10,7 +10,7 @@ import "./PieCharts.scss";
  *
  * @component
  * @example
- * <PieCharts todayScore={this.props.todayScore} />
+ * <PieCharts todayScore={this.state.todayScore} />
  */
 class PieCharts extends React.Component{
 

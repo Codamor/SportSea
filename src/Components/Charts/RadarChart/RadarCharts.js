@@ -10,7 +10,7 @@ import "./RadarCharts.scss";
  *
  * @component
  * @example
- * <RadarCharts userPerformance={this.props.userPerformance} />
+ * <RadarCharts userPerformance={this.state.userPerformance} />
  */
 class RadarCharts extends React.Component{
 

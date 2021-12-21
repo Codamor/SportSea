@@ -9,7 +9,7 @@ import "./BarCharts.scss"
  *
  * @component
  * @example
- * <BarCharts sessions={this.props.sessions} />
+ * <BarCharts sessions={this.state.sessions} />
  */
 class BarCharts extends React.Component{
 
