@@ -50,6 +50,17 @@ class UserPage extends React.Component {
 
                 <Container className="container container--horizontal">
 
+                    <Container className="container">
+                        <BarCharts sessions={this.state.userSessions} />
+
+                        <Container className="container container--horizontal">
+                            <LineCharts averageSessions={this.state.userSessions} />
+                            <RadarCharts userPerformance={this.state.userPerformance} />
+                            <PieCharts todayScore={this.state.todayScore} />
+                        </Container>
+
+                    </Container>
+
                     <Container className="container container--vertical">
                         <KeyData logo={calLogo} data={this.state.keyData.calorieCount + "kCal"} label="Calories" />
                         <KeyData logo={proLogo} data={this.state.keyData.proteinCount + "g"} label="Proteines" />
