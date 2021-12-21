@@ -1,12 +1,10 @@
 import React from "react";
-import PropTypes from "prop-types";
 import {getUserActivity, getUserAverageSessions, getUserInformations, getUserPerformance} from "../../adapters/api";
 
 import Container from "../../Components/Container/Container";
 import Main from "../../Components/Main/Main";
 import PieCharts from "../../Components/Charts/PieChart/PieCharts";
 import LineCharts from "../../Components/Charts/LineChart/LineCharts";
-import {Bar, Line, Radar} from "recharts";
 import BarCharts from "../../Components/Charts/BarChart/BarCharts";
 import RadarCharts from "../../Components/Charts/RadarChart/RadarCharts";
 import KeyData from "../../Components/KeyData/KeyData";

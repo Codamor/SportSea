@@ -15,10 +15,6 @@ import "./Container.scss";
  * </Container>
  */
 class Container extends React.Component{
-    constructor(props) {
-        super(props);
-
-    }
 
     render(){
         return(
