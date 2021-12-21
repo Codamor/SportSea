@@ -12,7 +12,14 @@ import {
 
 import "./LineCharts.scss";
 
-
+/**
+ * Component for showing user average sessions
+ * Display average sessions in a line chart
+ *
+ * @component
+ * @exemple
+ * <LineCharts averageSessions={this.props.averageSessions} />
+ */
 class LineCharts extends React.Component{
 
     render() {
@@ -95,6 +102,9 @@ class LineCharts extends React.Component{
 }
 
 LineCharts.propTypes = {
+    /**
+     * user average sessions
+     */
     averageSessions: PropTypes.arrayOf(
         PropTypes.shape(
             {
