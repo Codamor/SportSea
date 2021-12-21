@@ -3,6 +3,13 @@ import PropTypes from "prop-types";
 
 import "./KeyData.scss" ;
 
+/**
+ * Component for showing user key data information
+ *
+ * @component
+ * @example
+ * <KeyData logo={this.props.logo} data={this.props.data} label={this.props.label} />
+ */
 class KeyData extends React.Component{
     constructor(props){
         super(props)
@@ -40,6 +47,9 @@ class KeyData extends React.Component{
 }
 
 KeyData.propTypes = {
+    /**
+     * user key data informations
+     */
     logo: PropTypes.string.isRequired,
     data: PropTypes.string.isRequired,
     label: PropTypes.string.isRequired
