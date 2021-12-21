@@ -1,6 +1,13 @@
 import React from "react";
 import "./Navigation.scss" ;
 
+/**
+ * Component for showing the navigation
+ *
+ * @component
+ * @example
+ * <Navigation />
+ */
 class Navigation extends React.Component{
 
     render() {
