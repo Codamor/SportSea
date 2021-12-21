@@ -16,43 +16,46 @@ class BarCharts extends React.Component{
     render() {
 
         return (
-            <ResponsiveContainer width="100%" height="100%">
-                <BarChart
-                    data={this.props.sessions}
-                    barGap={50}
-                    barSize={7}>
+            <div className="barChart">
+                <ResponsiveContainer width="100%" height="100%">
+                    <BarChart
+                        data={this.props.sessions}
+                        barGap={50}
+                        barSize={7}>
 
-                    <CartesianGrid
-                        vertical={false}
-                        strokeDasharray="4"
-                    />
+                        <CartesianGrid
+                            vertical={false}
+                            strokeDasharray="4"
+                        />
 
-                    <XAxis dataKey={"day"} tickLine={false}/>
+                        <XAxis dataKey={"day"} tickLine={false}/>
 
-                    <YAxis hide={true}/>
+                        <YAxis hide={true}/>
 
-                    <Tooltip />
+                        <Tooltip />
 
-                    <Legend
-                        verticalAlign="top"
-                        align="right"
-                        iconType="circle"
-                        iconSize={10}
-                    />
+                        <Legend
+                            verticalAlign="top"
+                            align="right"
+                            iconType="circle"
+                            iconSize={10}
+                        />
 
-                    <Bar
-                        dataKey="kilogram"
-                        fill="black"
-                        radius={[10, 10, 0, 0]}
-                    />
+                        <Bar
+                            dataKey="kilogram"
+                            fill="black"
+                            radius={[10, 10, 0, 0]}
+                        />
 
-                    <Bar dataKey="calories"
-                         fill="red"
-                         radius={[10, 10, 0, 0]}
-                    />
+                        <Bar dataKey="calories"
+                             fill="red"
+                             radius={[10, 10, 0, 0]}
+                        />
 
-                </BarChart>
-            </ResponsiveContainer>
+                    </BarChart>
+                </ResponsiveContainer>
+            </div>
+
 
         );
     }

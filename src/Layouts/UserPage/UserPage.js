@@ -50,7 +50,7 @@ class UserPage extends React.Component {
 
                 <Container className="container container--horizontal">
 
-                    <Container className="container">
+                    <Container className="container container--vertical">
                         <BarCharts sessions={this.state.userSessions} />
 
                         <Container className="container container--horizontal">
