@@ -11,9 +11,6 @@ import "./KeyData.scss" ;
  * <KeyData logo={this.state.logo} data={this.state.data} label={this.state.label} />
  */
 class KeyData extends React.Component{
-    constructor(props){
-        super(props)
-    }
 
     render(){
         return (
@@ -24,6 +21,7 @@ class KeyData extends React.Component{
                     <img
                         className="keyData__image"
                         src={this.props.logo}
+                        alt={this.props.label}
                     />
 
                     <div className="keyData__content">

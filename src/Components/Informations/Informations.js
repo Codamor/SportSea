@@ -11,10 +11,6 @@ import "./Informations.scss"
  * <Informations userName={this.props.userName} />
  */
 class Informations extends React.Component{
-    constructor(props) {
-        super(props);
-    }
-
 
     render(){
         return(
