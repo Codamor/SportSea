@@ -29,7 +29,7 @@ class App extends React.Component{
                     <Navigation />
                 </Header>
 
-                <Container className="container--horizontal">
+                <Container className="container">
                     <Sidebar />
                     <Switch>
                         <Route exact path="/" component={HomePage} />
