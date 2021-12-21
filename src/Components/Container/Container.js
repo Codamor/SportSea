@@ -3,6 +3,17 @@ import PropTypes from 'prop-types';
 
 import "./Container.scss";
 
+/**
+ * Component to display components content
+ * Can display horizontal or vertical layout
+ * Use flex css properties
+ *
+ * @component
+ * @example
+ * <Container>
+ *     <Component>
+ * </Container>
+ */
 class Container extends React.Component{
     constructor(props) {
         super(props);
@@ -21,6 +32,9 @@ class Container extends React.Component{
 }
 
 Container.propTypes = {
+    /**
+     * component
+     */
     children: PropTypes.node.isRequired
 }
 
