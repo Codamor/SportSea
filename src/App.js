@@ -11,6 +11,12 @@ import Sidebar from "./Components/Sidebar/Sidebar";
 import HomePage from "./Layouts/HomePage/HomePage";
 import UserPage from "./Layouts/UserPage/UserPage";
 
+
+/**
+ * Component for showing the application
+ *
+ * @component
+ */
 class App extends React.Component{
 
     render(){
