@@ -3,6 +3,14 @@ import PropTypes from "prop-types";
 import {BarChart, CartesianGrid, XAxis, YAxis, Tooltip, Legend, Bar, ResponsiveContainer} from "recharts";
 import "./BarCharts.scss"
 
+/**
+ * Component for showing user activity
+ * Display user activity with a bar chart
+ *
+ * @component
+ * @example
+ * <BarCharts sessions={this.props.sessions} />
+ */
 class BarCharts extends React.Component{
 
     render() {
@@ -52,6 +60,9 @@ class BarCharts extends React.Component{
 }
 
 BarCharts.propTypes = {
+    /**
+     * user sessions
+     */
     sessions: PropTypes.arrayOf(
         PropTypes.shape(
             {
