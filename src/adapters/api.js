@@ -93,6 +93,7 @@ export async function getUserAverageSessions(userId){
             }
         )
     }
+
     return userAverageSessions ;
 }
 
@@ -114,11 +115,12 @@ export async function getUserPerformance(userId){
     let rawData = await response.json() ;
 
     let userPerformance = [] ;
+    let performancItems = ["Intensité", "Vitesse", "Force", "Endurance", "Energie", "Cardio"] ;
 
     for (let i = 0; i < rawData.data.data.length; i++) {
         userPerformance.push(
             {
-                kind: rawData.data.kind[i + 1],
+                kind: performancItems[i],
                 value: rawData.data.data[i].value
             }
         )

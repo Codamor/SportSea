@@ -41,7 +41,6 @@ class UserPage extends React.Component {
 
     render() {
 
-        console.log(this.state.keyData)
         return (
             <Main>
 
@@ -54,7 +53,7 @@ class UserPage extends React.Component {
                         <BarCharts sessions={this.state.userSessions} />
 
                         <Container className="container container--horizontal">
-                            <LineCharts averageSessions={this.state.userSessions} />
+                            <LineCharts averageSessions={this.state.averageSessions} />
                             <RadarCharts userPerformance={this.state.userPerformance} />
                             <PieCharts todayScore={this.state.todayScore} />
                         </Container>
