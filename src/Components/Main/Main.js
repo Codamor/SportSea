@@ -3,6 +3,15 @@ import PropTypes from "prop-types";
 
 import "./Main.scss" ;
 
+/**
+ * Component for showing main content
+ *
+ * @component
+ * @example
+ * <Main>
+ *     <Component />
+ * </Main>
+ */
 class Main extends React.Component{
     constructor(props){
         super(props)
@@ -21,6 +30,9 @@ class Main extends React.Component{
 
 
 Main.propTypes = {
+    /**
+     * component
+     */
     children: PropTypes.node.isRequired
 }
 
