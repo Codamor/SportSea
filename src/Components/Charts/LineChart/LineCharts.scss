@@ -10,9 +10,10 @@
   border-radius: 5px;
   background-color: $secondary-color;
   &__tooltip {
-    background-color: #ffffff;
-    color: $secondary-color;
     padding: 10px;
+    background-color: #ffffff;
+    font-size: 0.8em;
+    color: #000;
   }
   &__text{
     font-size: 0.8em;
