@@ -1,5 +1,5 @@
 import React from "react";
-import {getUserActivity, getUserAverageSessions, getUserInformations, getUserPerformance} from "../../adapters/api";
+import {getUserActivity, getUserAverageSessions, getUserInformations, getUserPerformance} from "../../Service/api";
 
 import Container from "../../Components/Container/Container";
 import Main from "../../Components/Main/Main";
