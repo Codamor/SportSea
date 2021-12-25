@@ -15,7 +15,7 @@ function checkError(response){
 
 /**
  * @param userId
- * @returns {Promise<*>} - user informations
+ * @returns {Promise<userInformations>} - user informations
  */
 export async function getUserInformations(userId){
     let response =
@@ -35,7 +35,7 @@ export async function getUserInformations(userId){
 /**
  *
  * @param userId
- * @returns {Promise<*[]>} - user activity
+ * @returns {Promise<userActivity>} - user activity
  */
 export async function getUserActivity(userId){
     let response =
@@ -68,7 +68,7 @@ export async function getUserActivity(userId){
 /**
  *
  * @param userId
- * @returns {Promise<*[]>} - user average sessions
+ * @returns {Promise<userAverageSessions>} - user average sessions
  */
 export async function getUserAverageSessions(userId){
     let response = await fetch(
@@ -100,7 +100,7 @@ export async function getUserAverageSessions(userId){
 /**
  *
  * @param userId
- * @returns {Promise<*[]>} - user performance
+ * @returns {Promise<userPerformance>} - user performance
  */
 export async function getUserPerformance(userId){
     let response = await fetch(
