@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: Components/Charts/LineChart/LineCharts.js</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: Components/Charts/LineChart/LineCharts.js</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>import React from "react";
+import PropTypes from "prop-types";
+
+import {
+    LineChart,
+    Line,
+    XAxis,
+    Tooltip,
+    ResponsiveContainer
+} from 'recharts';
+
+import "./LineCharts.scss";
+
+/**
+ * Component for showing user average sessions
+ * Display average sessions in a line chart
+ *
+ * @component
+ * @exemple
+ * &lt;LineCharts averageSessions={this.state.averageSessions} />
+ */
+class LineCharts extends React.Component{
+
+    render() {
+
+        const CustomTooltip = ({ active, payload}) => {
+            if (active &amp;&amp; payload &amp;&amp; payload.length) {
+                return (
+                    &lt;div className="lineChart__tooltip">
+                        &lt;p>{`${payload[0].value} min`}&lt;/p>
+                    &lt;/div>
+                );
+            }
+            return null;
+        };
+
+        return (
+
+            &lt;div className="lineChart">
+                &lt;ResponsiveContainer width="100%" height="100%">
+                    &lt;LineChart
+                        width={500}
+                        height={300}
+                        data={this.props.averageSessions}
+                        margin={{
+                            top: 50,
+                            right: 10,
+                            left:10,
+                            bottom: 15,
+                        }}
+                    >
+
+                        &lt;XAxis
+                            dataKey="day"
+                            stroke="white"
+                            axisLine={false}
+                            tickLine={false}
+                            tickMargin={20}
+                        />
+
+                        &lt;Tooltip content={&lt;CustomTooltip />}/>
+
+                        &lt;defs>
+                            &lt;linearGradient id="linear" x1="0%" y1="0%" x2="100%" y2="0%">
+                                &lt;stop offset="70%"  stopColor="rgba(255,255,255,0.5)"/>
+                                &lt;stop offset="100%" stopColor="#fff"/>
+                            &lt;/linearGradient>
+                        &lt;/defs>
+
+
+                        &lt;Line
+                            dot={false}
+                            type="natural"
+                            dataKey="sessionLength"
+                            stroke="url(#linear)"
+                            strokeWidth={4}
+                            activeDot={{ stroke: 'white', strokeWidth: 5, r: 3 }}
+                        />
+
+                        &lt;text
+                            className="lineChart__text"
+                            x="5%"
+                            y="15%"
+                        >
+                            Durée moyenne des
+                        &lt;/text>
+
+                        &lt;text
+                            className="lineChart__text"
+                            x="5%"
+                            y="20%"
+                        >
+                            sessions
+                        &lt;/text>
+
+                    &lt;/LineChart>
+                &lt;/ResponsiveContainer>
+            &lt;/div>
+
+        );
+    }
+}
+
+LineCharts.propTypes = {
+    /**
+     * user average sessions
+     */
+    averageSessions: PropTypes.arrayOf(
+        PropTypes.shape(
+            {
+                day: PropTypes.string.isRequired,
+                sessionLength: PropTypes.number.isRequired
+            }
+        )
+    )
+}
+
+
+export default LineCharts;</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="App.html">App</a></li><li><a href="BarCharts.html">BarCharts</a></li><li><a href="Container.html">Container</a></li><li><a href="Header.html">Header</a></li><li><a href="HomePage.html">HomePage</a></li><li><a href="Informations.html">Informations</a></li><li><a href="KeyData.html">KeyData</a></li><li><a href="LineCharts.html">LineCharts</a></li><li><a href="Logo.html">Logo</a></li><li><a href="Main.html">Main</a></li><li><a href="Navigation.html">Navigation</a></li><li><a href="PieCharts.html">PieCharts</a></li><li><a href="RadarCharts.html">RadarCharts</a></li><li><a href="Sidebar.html">Sidebar</a></li><li><a href="UserPage.html">UserPage</a></li></ul><h3>Global</h3><ul><li><a href="global.html#checkError">checkError</a></li><li><a href="global.html#getUserActivity">getUserActivity</a></li><li><a href="global.html#getUserAverageSessions">getUserAverageSessions</a></li><li><a href="global.html#getUserInformations">getUserInformations</a></li><li><a href="global.html#getUserPerformance">getUserPerformance</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.7</a> on Sat Dec 25 2021 12:52:34 GMT+0100 (heure normale d’Europe centrale)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>

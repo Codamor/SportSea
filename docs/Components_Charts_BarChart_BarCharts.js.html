@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: Components/Charts/BarChart/BarCharts.js</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: Components/Charts/BarChart/BarCharts.js</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>import React from "react";
+import PropTypes from "prop-types";
+import {BarChart, CartesianGrid, XAxis, YAxis, Tooltip, Legend, Bar, ResponsiveContainer} from "recharts";
+import "./BarCharts.scss"
+
+/**
+ * Component for showing user activity
+ * Display user activity with a bar chart
+ *
+ * @component
+ * @example
+ * &lt;BarCharts sessions={this.state.sessions} />
+ */
+class BarCharts extends React.Component{
+
+    render() {
+
+        const CustomTooltip = ({ active, payload }) => {
+            if (active &amp;&amp; payload &amp;&amp; payload.length) {
+                return (
+                    &lt;div className="barChart__toolTip">
+                        &lt;p className="barChart__toolTip-text">{`${payload[0].value}kg`}&lt;/p>
+                        &lt;p className="barChart__toolTip-text">{`${payload[1].value}kCal`}&lt;/p>
+                    &lt;/div>
+                );
+            }
+
+            return null;
+        };
+
+        const legend = (value) => {
+            let text="";
+            if(value === "kilogram"){
+                text= "Poids (kg)";
+            }
+            else{
+                text= "Calories brûlées (kCal)";
+            }
+            return &lt;span className="barChart__legend">{text}&lt;/span>;
+        };
+
+        return (
+            &lt;div className="barChart">
+                &lt;ResponsiveContainer width="100%" height="100%">
+                    &lt;BarChart
+                        data={this.props.sessions}
+                        barCategoryGap={50}
+                        barGap={10}
+                        barSize={7} >
+
+                        &lt;CartesianGrid
+                            vertical={false}
+                            strokeDasharray="3 3"
+                        />
+
+                        &lt;XAxis
+                            dataKey={"day"}
+                            tickLine={false}
+                        />
+
+                        &lt;YAxis
+                            hide={true}
+                            tickLine={false}
+                            axisLine={false}
+                            orientation="left"
+                            yAxisId="calories"
+                        />
+
+                        &lt;YAxis
+                            tickLine={false}
+                            axisLine={false}
+                            orientation="right"
+                            yAxisId="kilogram"
+                            domain={ ['dataMin - 1', 'dataMax + 2'] }
+                            allowDecimals={ false }
+                        />
+
+                        &lt;Bar
+                            dataKey="kilogram"
+                            fill="black"
+                            radius={[10, 10, 0, 0]}
+                            yAxisId="kilogram"
+                        />
+
+                        &lt;Bar
+                            dataKey="calories"
+                            fill="red"
+                            radius={[10, 10, 0, 0]}
+                            yAxisId="calories"
+                        />
+
+                        &lt;Tooltip content={&lt;CustomTooltip/>} />
+
+                        &lt;Legend
+                            height={100}
+                            formatter={legend}
+                            iconSize={8}
+                            iconType="circle"
+                            align="right"
+                            verticalAlign="top"/>
+
+                        &lt;text
+                            className="barChart__title"
+                            fontSize="15px"
+                            x={70}
+                            y={20}
+                            textAnchor="middle"
+                            fill="black"
+                        > Activité quotidienne &lt;/text>
+
+                    &lt;/BarChart>
+                &lt;/ResponsiveContainer>
+            &lt;/div>
+
+
+        );
+    }
+
+}
+
+BarCharts.propTypes = {
+    /**
+     * user sessions
+     */
+    sessions: PropTypes.arrayOf(
+        PropTypes.shape(
+            {
+                day: PropTypes.number.isRequired,
+                kilogram: PropTypes.number.isRequired,
+                calories: PropTypes.number.isRequired
+            }
+        )
+    )
+}
+
+export default BarCharts ;</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="App.html">App</a></li><li><a href="BarCharts.html">BarCharts</a></li><li><a href="Container.html">Container</a></li><li><a href="Header.html">Header</a></li><li><a href="HomePage.html">HomePage</a></li><li><a href="Informations.html">Informations</a></li><li><a href="KeyData.html">KeyData</a></li><li><a href="LineCharts.html">LineCharts</a></li><li><a href="Logo.html">Logo</a></li><li><a href="Main.html">Main</a></li><li><a href="Navigation.html">Navigation</a></li><li><a href="PieCharts.html">PieCharts</a></li><li><a href="RadarCharts.html">RadarCharts</a></li><li><a href="Sidebar.html">Sidebar</a></li><li><a href="UserPage.html">UserPage</a></li></ul><h3>Global</h3><ul><li><a href="global.html#checkError">checkError</a></li><li><a href="global.html#getUserActivity">getUserActivity</a></li><li><a href="global.html#getUserAverageSessions">getUserAverageSessions</a></li><li><a href="global.html#getUserInformations">getUserInformations</a></li><li><a href="global.html#getUserPerformance">getUserPerformance</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.7</a> on Sat Dec 25 2021 12:52:34 GMT+0100 (heure normale d’Europe centrale)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>
