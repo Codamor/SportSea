@@ -19,7 +19,9 @@
     cursor: pointer;
   }
   &__copyright{
-    bottom: 20px;
+    @media screen and (min-width: 1300px){
+      margin-top: 60px;
+    }
     color: #fff;
     writing-mode: sideways-lr;
   }
