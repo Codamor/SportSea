@@ -39,6 +39,9 @@ class Sidebar extends React.Component{
                         </a>
                     </li>
                 </ul>
+                <div className="sidebar__copyright">
+                    Copyright, SportSee 2020
+                </div>
             </aside>
         );
     }
