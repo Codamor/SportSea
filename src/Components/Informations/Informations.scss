@@ -1,5 +1,7 @@
 .informations{
-  margin-bottom: 50px;
+  @media screen and (min-width: 1280px) {
+    margin-bottom: 50px;
+  }
   &__title{
     margin-bottom: 15px;
     font-weight: 500;
