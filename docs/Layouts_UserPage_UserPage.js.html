@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: Layouts/UserPage/UserPage.js</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: Layouts/UserPage/UserPage.js</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>import React from "react";
+import {getUserActivity, getUserAverageSessions, getUserInformations, getUserPerformance} from "../../Service/api";
+
+import Container from "../../Components/Container/Container";
+import Main from "../../Components/Main/Main";
+import PieCharts from "../../Components/Charts/PieChart/PieCharts";
+import LineCharts from "../../Components/Charts/LineChart/LineCharts";
+import BarCharts from "../../Components/Charts/BarChart/BarCharts";
+import RadarCharts from "../../Components/Charts/RadarChart/RadarCharts";
+import KeyData from "../../Components/KeyData/KeyData";
+import Informations from "../../Components/Informations/Informations";
+
+import calLogo from "../../assets/img/calories-icon.png" ;
+import proLogo from "../../assets/img/protein-icon.png" ;
+import carLogo from "../../assets/img/carbs-icon.png" ;
+import fatLogo from "../../assets/img/fat-icon.png" ;
+
+
+/**
+ * Component for showing the user page main content
+ *
+ * @component
+ * @example
+ &lt;UserPage />
+ */
+class UserPage extends React.Component {
+    constructor(props) {
+        super(props);
+        this.userId = this.props.match.params.id;
+        this.state = {
+            userName: "",
+            userSessions: [],
+            averageSessions: [],
+            userPerformance: [],
+            todayScore: 0,
+            keyData: []
+        }
+    }
+
+    render() {
+
+        return (
+            &lt;Main>
+
+               &lt;Informations userName={this.state.userName} />
+
+
+                &lt;Container className="container container--horizontal">
+
+                    &lt;Container className="container container--vertical">
+                        &lt;BarCharts sessions={this.state.userSessions} />
+
+                        &lt;Container className="container container--horizontal">
+                            &lt;LineCharts averageSessions={this.state.averageSessions} />
+                            &lt;RadarCharts userPerformance={this.state.userPerformance} />
+                            &lt;PieCharts todayScore={this.state.todayScore} />
+                        &lt;/Container>
+
+                    &lt;/Container>
+
+                    &lt;Container className="container container--vertical">
+                        &lt;KeyData logo={calLogo} data={this.state.keyData.calorieCount + "kCal"} label="Calories" />
+                        &lt;KeyData logo={proLogo} data={this.state.keyData.proteinCount + "g"} label="Proteines" />
+                        &lt;KeyData logo={carLogo} data={this.state.keyData.carbohydrateCount + "g"} label="Glucides" />
+                        &lt;KeyData logo={fatLogo} data={this.state.keyData.lipidCount + "g"} label="Lipides" />
+                    &lt;/Container>
+
+                &lt;/Container>
+
+            &lt;/Main>
+        );
+    }
+
+    componentDidMount() {
+
+        getUserInformations(this.userId)
+            .then(data => {
+                this.setState(
+                    {
+                        userName: data.userInfos.firstName,
+                        todayScore: data.todayScore,
+                        keyData: data.keyData
+                    }
+                )
+            })
+
+        getUserActivity(this.userId)
+            .then(data => {
+                this.setState(
+                    {
+                        userSessions: data
+                    }
+                )
+            })
+
+        getUserAverageSessions(this.userId)
+            .then(data => {
+                this.setState(
+                    {
+                        averageSessions: data
+                    }
+                )
+            })
+
+
+        getUserPerformance(this.userId).then(data => {
+            this.setState(
+                {
+                    userPerformance: data
+                }
+            )
+        })
+    }
+}
+
+export default UserPage ;</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="App.html">App</a></li><li><a href="BarCharts.html">BarCharts</a></li><li><a href="Container.html">Container</a></li><li><a href="Header.html">Header</a></li><li><a href="HomePage.html">HomePage</a></li><li><a href="Informations.html">Informations</a></li><li><a href="KeyData.html">KeyData</a></li><li><a href="LineCharts.html">LineCharts</a></li><li><a href="Logo.html">Logo</a></li><li><a href="Main.html">Main</a></li><li><a href="Navigation.html">Navigation</a></li><li><a href="PieCharts.html">PieCharts</a></li><li><a href="RadarCharts.html">RadarCharts</a></li><li><a href="Sidebar.html">Sidebar</a></li><li><a href="UserPage.html">UserPage</a></li></ul><h3>Global</h3><ul><li><a href="global.html#checkError">checkError</a></li><li><a href="global.html#getUserActivity">getUserActivity</a></li><li><a href="global.html#getUserAverageSessions">getUserAverageSessions</a></li><li><a href="global.html#getUserInformations">getUserInformations</a></li><li><a href="global.html#getUserPerformance">getUserPerformance</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.7</a> on Sat Dec 25 2021 12:52:34 GMT+0100 (heure normale d’Europe centrale)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>
