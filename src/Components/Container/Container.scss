@@ -1,12 +1,10 @@
 .container{
   display: flex;
   &--horizontal{
-    display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
   }
   &--vertical{
-    display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: space-between;
   }
 }
