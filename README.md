@@ -6,62 +6,65 @@
 
 ![Les Petits Plats](SportSea.png)
 
-## Présentation du contexte
-SportSea est une startup dédiée au coaching sportif. 
-Elle souhaite lancer une nouvelle version de la page profil de l’utilisateur. 
+## Présentation
+SportSea is a startup dedicated to sports coaching. She wants to launch a new version of the user's profile page. 
 
-Cette page va notamment permettre à l’utilisateur de suivre :
-* le nombre de sessions réalisées,
-* le nombre de calories brûlées.
+This page will in particular allow the user to follow :
+* the number of sessions carried out,
+* the number of calories burned.
 
+## Prerequesites
 
-## Lancer la démonstration
-* cloner le repository du backEnd : https://github.com/OpenClassrooms-Student-Center/P9-front-end-dashboard
-* cloner le repository du front end ici présent
-* lancer la back end avec : npm run start
-* lancer le front end avec : npm run start
+* NodeJS v16.13.1
+* Npm 8.1.2
 
-Pour affiche les profils des 2 utilisateurs, ajouter les URI suivantes :
+## Start the demonstration
+* clone the backEnd repository : https://github.com/OpenClassrooms-Student-Center/P9-front-end-dashboard
+* clone the frontend reposito,ry here
+* start the back end with: npm run start
+* start the front end with : npm run start
+
+To display the profiles of the 2 users, add the following URIs :
 - /user/12,
 - /user/18.
  
 
-## Ce que ce projet m'a permis de pratiquer
+## What this project allowed me to practice
 
-### Compétences
+### Skills
 
-- découper et intégrer une maquette,
-- structurer une page web en composants React,
-- mettre en forme une page web avec HTLM et CSS3,
-- générer du contenu dynamiquement depuis une api,
-- réaliser des graphiques avec la librairie Recharts
+- cut and integrate a template,
+- structure a web page in React components,
+- format a web page with HTLM and CSS3,
+- generate content dynamically from an API,
+- create graphics with the Recharts library
 
 
-### Technologies / méthodes
+### Technologies / méthods
 
 - HTML5 / CSS3,
 - Sass,
 - React, React DOM, React Router,
 - Recharts / D3
 
-## Ressources à ma disposition
+## Resources at my disposal
 
-* maquette desktop,
+* desktop template,
 * backend.
 
 
-## Consignes
+## Instructions
 
-- pouvoir afficher les informations des 2 profils utilisateurs
+- be able to display the information of the 2 user profiles
   - /user/12,
   - /user/18.
 
 
-## Livrables attendus
+## Expected deliverables
 
-- découpage en composants modulaires et réutilisables,
-- un composant par fichier,
-- structure logique des différents fichiers,
-- utilisation des props entre les composants,
-- utilisation du state dans les composants quand c'est nécessaire,
-- le code ne devait pas produire d'erreur ou de warning dans la console.
+- cutting into modular and reusable components,
+- one component per file,
+- logical structure of the different files,
+- use of props between components,
+- use of state in components when necessary,
+- the code should not produce an error or warning in the console.
