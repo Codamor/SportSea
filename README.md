@@ -1,22 +1,57 @@
 # SPORTSEA
 
-![Les Petits Plats](front-end/SportSea.png)
+![SportSea](front-end/SportSea.png)
 
-## Présentation
+## Table of contents
+- [Context](#context)
+- [Installation](#installation)
+  - [Prerequisites](#prerequisites)
+  - [Setup](#setup)
+    - [Back end](#back-end)
+    - [Front end](#front-end)
+- [Display user data](#display-user-data)
+- [What this project allowed me to practice](#what-this-project-allowed-me-to-practice)
+  - [Skills](#skills)
+  - [Technologies / methods](#technologies--methods)
+- [Resources](#resources)
+- [Expected deliverables](#expected-deliverables)
+
+
+## Context
 SportSea is a startup dedicated to sports coaching. She wants to launch a new version of the user's profile page. 
 
 This page will in particular allow the user to follow :
 * the number of sessions carried out,
 * the number of calories burned.
 
-## Prerequesites
+
+## Installation
+
+### Prerequisites
 
 * NodeJS v16.13.1
-* Npm 8.1.2
 
-## Start the demonstration
-* start the back end with: npm run start
-* start the front end with : npm run start
+### Setup
+
+#### Back end
+
+Clone the repository, then :
+```
+cd back-end
+npm run install
+npm run start
+```
+
+#### Front end
+
+Clone the repository, then :
+```
+cd front-end
+npm run install
+npm run start
+```
+
+## Display user data
 
 To display the profiles of the 2 users, add the following URIs :
 - /user/12,
@@ -34,24 +69,18 @@ To display the profiles of the 2 users, add the following URIs :
 - create graphics with the Recharts library
 
 
-### Technologies / méthods
+### Technologies / methods
 
 - HTML5 / CSS3,
-- Sass,
-- React, React DOM, React Router,
-- Recharts / D3
+- SaSS v6.0.1
+- React v17.0.2, 
+- React Router Dom v5.3.0,
+- Recharts v2.1.8.
 
-## Resources at my disposal
+## Resources
 
 * desktop template,
 * backend.
-
-
-## Instructions
-
-- be able to display the information of the 2 user profiles
-  - /user/12,
-  - /user/18.
 
 
 ## Expected deliverables

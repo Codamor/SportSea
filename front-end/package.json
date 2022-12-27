@@ -1,7 +1,16 @@
 {
-  "name": "front-end",
+  "name": "sportsea",
   "version": "0.1.0",
-  "private": true,
+  "author": "Adelino ARAUJO",
+  "license": "ISC",
+  "homepage": "https://codamor.github.io/SportSea/",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Codamor/SportSea.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Codamor/SportSea/issues"
+  },
   "dependencies": {
     "@testing-library/jest-dom": "^5.15.1",
     "@testing-library/react": "^11.2.7",

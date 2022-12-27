@@ -1,8 +1,8 @@
-#Jetbrains idea folder
-front-end/.idea/
+# IDE
+**.idea/
 
 # dependencies
-/front-end/node_modules
+**/node_modules
 
 # production
-/build
+**/build
